@@ -1,0 +1,82 @@
+"mdl"
+7
+"Project1","appl","Test",1015,505,0
+""
+0
+0
+""
+""
+""
+"mod"
+" 2"
+1010
+".\Sample Module.cod"
+"Sample Module.cod"
+"vew"
+4,1003,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#FALSE#
+"Form1"
+"Form1003"
+""
+0
+""
+""
+0,0,0,0
+"cho"
+1
+#FALSE#,0,#TRUE#
+"obj"
+3
+"cho","Pushbutton1007",1007,40,96,12,64,#TRUE#,0,"Form 2",0,0,0
+"Sub object1007()
+	Dim ui as String
+	
+	ui=UserInput.text
+	
+	Label1013.Text = ui
+	
+End Sub"
+"lbl"
+1
+"obj"
+3
+"lbl","Label1013",1013,16,20,11,66,#TRUE#,0,"Read Comments",0,0,0
+"Sub object1013()
+
+	'Globals go in startup code
+
+End Sub"
+"fld"
+1
+#TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
+"obj"
+3
+"fld","UserInput",1014,28,40,12,52,#TRUE#,0,"",0,0,0
+""
+"vew"
+4,1005,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#FALSE#
+"Form2"
+"Form1005"
+""
+0
+""
+""
+0,0,0,0
+"cho"
+1
+#FALSE#,0,#TRUE#
+"obj"
+3
+"cho","Pushbutton1008",1008,40,100,12,64,#TRUE#,0,"Form 1",0,0,0
+"Sub object1008()
+	nextScreen ~Form1003~
+End Sub"
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","Button1009",1009,52,124,12,36,#TRUE#,0,"OK",0,0,0
+"Sub object1009()
+	MsgBox ~You're dumb~
+End Sub"
+"end"
