@@ -1,0 +1,84 @@
+"mdl"
+7
+"AnimatedSlider","appl","Test",1006,505,0
+"Sub Project_Startup()
+
+	' Setting up slider
+	Global i as Integer
+	Slider.Max=100
+	
+	' Counter initiated here
+	Global counter as Integer
+	counter=0
+	
+	Global start as Integer
+	start=0
+
+End Sub"
+0
+0
+""
+""
+""
+"vew"
+4,1003,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#FALSE#
+"Form1"
+"AnimatedSlider"
+"Sub Form1003_Before()
+
+End Sub"
+0
+""
+"Sub Form1003_Event()
+
+End Sub"
+0,0,0,0
+"sli"
+1
+#FALSE#,#FALSE#,#FALSE#,#FALSE#,0,100,10,0,0,0
+"obj"
+3
+"sli","Slider",1004,4,76,12,152,#TRUE#,0,"Slider",0,0,0
+""
+"but"
+1
+#TRUE#,#TRUE#,#TRUE#
+"obj"
+3
+"but","OKButton",1005,56,112,12,36,#TRUE#,0,"OK",0,0,0
+"Sub object1005()
+	
+	start=1
+
+	Do While start=1
+		Do Until counter=100
+			counter=counter+1
+			slider.Value=counter
+			Delay 0.02
+			If counter=100
+				Do Until counter=0
+					counter=counter-1
+					Slider.Value=counter
+					Delay 0.02
+				Loop
+			End If
+		Loop
+	Loop
+	
+End Sub"
+"cho"
+1
+#FALSE#,0,#TRUE#
+"obj"
+3
+"cho","StopButton",1006,48,128,12,56,#TRUE#,0,"Pushbutton",0,0,0
+"Sub object1006()
+	
+	If start=0
+		MsgBox ~Not started!~
+	Else
+		start=0
+	End If
+
+End Sub"
+"end"

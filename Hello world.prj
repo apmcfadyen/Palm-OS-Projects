@@ -1,6 +1,6 @@
 "mdl"
 7
-"Hello World","appl","Test",1028,505,0
+"Hello World","appl","Test",1036,505,0
 "Sub Project_Startup()
 
 ' Used for the list index
@@ -9,6 +9,13 @@ i=0
 
 Global TextChange as Integer
 TextChange=1
+
+' Used for the slider
+Global j as Integer
+j=0
+
+' Maximum slider value
+ProgressSlider.Max=3
 
 End Sub"
 0
@@ -40,8 +47,8 @@ End Sub"
 	If TextChange=1
 		InputLabel.Text = UserInput.Text
 	End If
-		
-		
+
+	ProgressSlider.Value=j
 
 End Sub"
 0,0,0,0
@@ -50,7 +57,7 @@ End Sub"
 #FALSE#,0,#TRUE#
 "obj"
 3
-"cho","ChangeLabelButton",1007,4,112,12,64,#TRUE#,0,"Change Label",0,0,0
+"cho","ChangeLabelButton",1007,8,68,12,64,#TRUE#,0,"Change Label",0,0,0
 "Sub object1007()
 	Dim ui as String
 	
@@ -81,7 +88,7 @@ End Sub"
 #TRUE#,#TRUE#,#TRUE#,#FALSE#,#TRUE#,80,#FALSE#,#FALSE#,#FALSE#
 "obj"
 3
-"fld","UserInput",1014,8,56,12,52,#TRUE#,0,"",0,0,0
+"fld","UserInput",1014,12,32,12,52,#TRUE#,0,"",0,0,0
 ""
 "lst"
 2
@@ -89,14 +96,14 @@ End Sub"
 ""
 "obj"
 3
-"lst","OutputList",1016,76,44,44,76,#TRUE#,0,"",0,0,0
+"lst","OutputList",1016,80,20,44,76,#TRUE#,0,"",0,0,0
 ""
 "cho"
 1
 #FALSE#,0,#TRUE#
 "obj"
 3
-"cho","AddItemButton",1017,84,112,12,64,#TRUE#,0,"Add Item",0,0,0
+"cho","AddItemButton",1017,88,68,12,64,#TRUE#,0,"Add Item",0,0,0
 "Sub object1017()
 	' Adds item to list
 	Dim uinput as String
@@ -127,7 +134,7 @@ End Sub"
 #FALSE#,0,#TRUE#
 "obj"
 3
-"cho","ClearListButton",1027,48,132,12,56,#TRUE#,0,"Clear List",0,0,0
+"cho","ClearListButton",1027,52,88,12,56,#TRUE#,0,"Clear List",0,0,0
 "Sub object1027()
 
 	listclear ~OutputList~
@@ -135,4 +142,63 @@ End Sub"
 	IndexerLabel.Text = str(i)
 
 End Sub"
+"chk"
+1
+#FALSE#,0,#TRUE#
+"obj"
+3
+"chk","Checkbox1",1033,4,104,12,56,#TRUE#,0,"Checkbox",0,0,0
+"Sub object1033()
+	
+	If Checkbox1.status=nsbChecked Then
+		j=j+1
+	End If
+	
+	If Checkbox1.Status=nsbUnchecked Then
+		j=j-1
+	End If
+
+
+End Sub"
+"chk"
+1
+#FALSE#,0,#TRUE#
+"obj"
+3
+"chk","Checkbox2",1034,4,120,12,56,#TRUE#,0,"Checkbox",0,0,0
+"Sub object1034()
+
+	If Checkbox2.status=nsbChecked Then
+		j=j+1
+	End If
+	
+	If Checkbox2.Status=nsbUnchecked Then
+		j=j-1
+	End If
+
+End Sub"
+"chk"
+1
+#FALSE#,0,#TRUE#
+"obj"
+3
+"chk","Checkbox3",1035,4,136,12,56,#TRUE#,0,"Checkbox",0,0,0
+"Sub object1035()
+
+	If Checkbox3.status=nsbChecked Then
+		j=j+1
+	End If
+	
+	If Checkbox3.Status=nsbUnchecked Then
+		j=j-1
+	End If
+
+End Sub"
+"sli"
+1
+#FALSE#,#FALSE#,#FALSE#,#FALSE#,0,100,10,0,0,0
+"obj"
+3
+"sli","ProgressSlider",1036,72,120,12,75,#TRUE#,0,"Slider",0,0,0
+""
 "end"
