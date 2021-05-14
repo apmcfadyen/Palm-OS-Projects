@@ -1,21 +1,24 @@
 "mdl"
 7
-"Hello World","appl","Test",1036,505,0
+"Hello World","appl","Test",1037,505,0
 "Sub Project_Startup()
+	
+	Global k as Integer
+	k=3
 
-' Used for the list index
-Global i as Integer
-i=0
-
-Global TextChange as Integer
-TextChange=1
-
-' Used for the slider
-Global j as Integer
-j=0
-
-' Maximum slider value
-ProgressSlider.Max=3
+	' Used for the list index
+	Global i as Integer
+	i=0
+	
+	Global TextChange as Integer
+	TextChange=1
+	
+	' Used for the slider
+	Global j as Integer
+	j=0
+	
+	' Maximum slider value
+	ProgressSlider.Max=k
 
 End Sub"
 0
@@ -35,6 +38,7 @@ End Sub"
 "Sub Hello_World_before()
 
 IndexerLabel.Text=str(i)
+ProgressIndicator.Text=str(j) + ~ / ~ + str(k)
 
 End Sub"
 0
@@ -49,6 +53,8 @@ End Sub"
 	End If
 
 	ProgressSlider.Value=j
+	
+	ProgressIndicator.Text=str(j) + ~ / ~ + str(k)
 
 End Sub"
 0,0,0,0
@@ -200,5 +206,11 @@ End Sub"
 "obj"
 3
 "sli","ProgressSlider",1036,72,120,12,75,#TRUE#,0,"Slider",0,0,0
+""
+"lbl"
+1
+"obj"
+3
+"lbl","ProgressIndicator",1037,72,136,11,22,#TRUE#,0,"Label",0,0,0
 ""
 "end"
