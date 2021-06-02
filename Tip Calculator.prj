@@ -1,12 +1,19 @@
 "mdl"
 7
-"TipCalculator","appl","Test",1036,505,0
-""
+"TipCalculator","appl","Apmc",1037,505,0
+"Sub Project_Startup()
+
+End Sub"
 0
 0
+"Tip Calc"
 ""
 ""
-""
+"mod"
+" 2"
+1037
+".\Tip Calculator.cod"
+"Tip Calculator.cod"
 "vew"
 4,1003,#FALSE#,#TRUE#,#TRUE#,0,0,0,160,160,0,#FALSE#,#TRUE#
 "Tip Calculator"
@@ -94,33 +101,27 @@ End Sub"
 	Dim Amount as Float*6,2
 	Dim Total as Float*6,2
 	Dim Custom as Float*6,2
+	Dim RealTip as String
+	Dim AmountString as String
 	
 	EnteredBillOutputLabel.Show
-	EnteredBillOutputLabel.Text=str(val(BillAmtField.Text)*1)
 	TipOutputLabel.Show
 	TotalOutputLabel.Show
 	
+	Amount=Val(BillAmtField.Text)
+	AmountString=Format(Amount,~nnn0.00~)
+	EnteredBillOutputLabel.Text=Trim(AmountString)
+	
+	
 	Select Case ChoicesPopUp.Text
 		Case ~Poor~
-			Amount=val(BillAmtField.Text)
-			Tip=Amount*0.1
-			TipOutputLabel.Text=str(Tip)
-			TotalOutputLabel.Text=str(trunc(Amount+Tip,2))
+			Call calc (Amount,0.1)
 		Case ~Fair~
-			Amount=val(BillAmtField.Text)
-			Tip=Amount*0.15
-			TipOutputLabel.Text=str(Tip)
-			TotalOutputLabel.Text=str(trunc(Amount+Tip,2))
+			Call calc(Amount,0.15)
 		Case ~Good~
-			Amount=val(BillAmtField.Text)
-			Tip=Amount*0.20
-			TipOutputLabel.Text=str(Tip)
-			TotalOutputLabel.Text=str(trunc(Amount+Tip,2))
+			Call calc(Amount,0.2)
 		Case ~Great~
-			Amount=val(BillAmtField.Text)
-			Tip=Amount*0.25
-			TipOutputLabel.Text=str(Tip)
-			TotalOutputLabel.Text=str(trunc(Amount+Tip,2))
+			Call calc(Amount,0.25)
 		Case ~Custom (%)~
 			TipOutputLabel.Text=~User Defined~
 			Select Case CustomTipField.Text
@@ -129,10 +130,7 @@ End Sub"
 				Case Else
 					Amount=val(BillAmtField.Text)
 					Custom=val(CustomTipField.Text)/100
-					TipOutputLabel.Text=Str(Custom)
-					Tip=Amount*Custom
-					TipOutputLabel.Text=str(Tip)
-					TotalOutputLabel.Text=str(trunc(Amount+Tip,2))
+					Call calc(Amount,Custom)
 			End Select
 		Case Else
 			MsgBox ~Select Service Quality~
