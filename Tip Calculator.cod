@@ -1,0 +1,15 @@
+"Sub calc (Amount as Float, Percent as Float)
+	Dim Tip as Float*6,2
+	Dim Total as Float*6,2
+	Dim TipString as String
+	Dim TotalString as String
+
+	Tip=Amount*Percent
+	TipString=Format(Tip,~nnn0.00~)
+	
+	Total=Amount+Tip
+	TotalString=Format(Total,~nnn0.00~)
+		
+	TipOutputLabel.Text=Trim(TipString)
+	TotalOutputLabel.Text=Trim(TotalString)
+End Sub"
